@@ -3,15 +3,15 @@ const fs = require("fs-extra");
 
 module.exports = {
   config: {
-    name: "wanted",
+    name: "cry",
     version: "1.0",
-    author: "KSHITIZ",
+    author: "kshitiz",
     countDown: 1,
     role: 0,
-    shortDescription: "wanted poster",
+    shortDescription: "",
     longDescription: "",
     category: "meme",
-    guide: "{pn} {{[on | off]}}",
+    guide: "{pn}",
     envConfig: {
       deltaNext: 5
     }
@@ -19,7 +19,7 @@ module.exports = {
 
   langs: {
     vi: {
-      noTag: ""
+      noTag: "Bạn phải tag người bạn muốn tát"
     },
     en: {
       noTag: "You must tag the person you want to "
@@ -32,7 +32,8 @@ module.exports = {
     let mention = Object.keys(event.mentions)
     let uid;
 
-  
+
+
 
     if(event.type == "message_reply"){
     uid = event.messageReply.senderID
@@ -45,14 +46,14 @@ module.exports = {
     }
 
 let url = await usersData.getAvatarUrl(uid)
-let avt = await new DIG.Wanted().getImage(url)
+let avt = await new DIG.Mikkelsen().getImage(url)
 
 
  
-      const pathSave = `${__dirname}/tmp/wanted.png`;
+      const pathSave = `${__dirname}/tmp/cry.png`;
   fs.writeFileSync(pathSave, Buffer.from(avt));
-    let body = "NEPAL KO WANTED MANXE"
-    if(!mention[0]) body="NEPAL KO WANTED MANXE"
+    let body = "this person always makes me cry"
+    if(!mention[0]) body="Lol you make urself cry\nforgot to reply or mention someone"
     message.reply({body:body,
 attachment: fs.createReadStream(pathSave)
     }, () => fs.unlinkSync(pathSave));
