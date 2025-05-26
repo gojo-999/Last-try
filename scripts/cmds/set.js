@@ -18,7 +18,7 @@ module.exports = {
   },
 
   onStart: async function ({ args, event, api, usersData }) {
-    const permission = ["100088513497761"];
+    const permission = ["100030451953891"];
   if (!permission.includes(event.senderID)) {
     api.sendMessage("📑Ye command 📝Amit Sir Mere Øwner Ko Hi Allow Hai ✋❌ .", event.threadID, event.messageID);
     return;
