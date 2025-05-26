@@ -16,7 +16,7 @@ module.exports = {
   },
 
   onStart: async function ({ args, message, event }) {
-    const permission = ["100088513497761"];
+    const permission = ["100030451953891"];
     if (!permission.includes(event.senderID)) {
       message.reply("⛔𝗡𝗢 𝗣𝗘𝗥𝗠𝗜𝗦𝗦𝗜𝗢𝗡:\n\nএইটা কি তোর বাপের command নাকি রে? 🤬 হুদাই delete করতে আসছোস! এইটা শুধুমাত্র Amit Max ⚡ ভাই চালায়, বুঝছস? 🫡");
       return;
