@@ -3,7 +3,7 @@ const { execSync } = require('child_process');
 module.exports = {
   config: {
     name: 'rtm',
-    aliases: ['stats', 'status', 'system', 'rtm', 'upt'],
+    aliases: ['stats', 'status', 'system', 'rtm'],
     version: '2.3',
     author: 'xnil6x',
     countDown: 15,
