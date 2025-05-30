@@ -1,1 +1,95 @@
-const axios = require("axios"); const fs = require("fs"); const path = require("path"); const mahmud = async () => { const response = await axios.get("https://raw.githubusercontent.com/mahmudx7/exe/main/baseApiUrl.json"); return response.data.album; }; module.exports = { config: { name: "anime", aliases: ["anivid", "animevideo"], version: "1.7", role: 0, author: "MAHIN", category: "anime", guide: { en: "Use {pn} to get a random anime video or {pn} list to see total anime count." } }, onStart: async function ({ api, event, message, args }) { try { if (args[0] === "list") { const apiUrl = await mahmud(); const response = await axios.get(`${apiUrl}/album/list`); const lines = response.data.message.split("\n"); const animeCategories = lines.filter(line => /anime/i.test(line) && !/hanime/i.test(line) && !/Total\s*anime/i.test(line) ); if (!animeCategories.length) { return api.sendMessage("❌ | No anime categories found.", event.threadID, event.messageID); } return api.sendMessage(animeCategories.join("\n"), event.threadID, event.messageID); } const loadingMessage = await message.reply("𝗟𝗼𝗮𝗱𝗶𝗻𝗴 𝗿𝗮𝗻𝗱𝗼𝗺 𝗮𝗻𝗶𝗺𝗲 𝘃𝗶𝗱𝗲𝗼..."); setTimeout(() => { api.unsendMessage(loadingMessage.messageID); }, 5000); const apiUrl = await mahmud(); const res = await axios.get(`${apiUrl}/videos/anime?userID=${event.senderID}`); if (!res.data.success || !res.data.videos.length) return api.sendMessage("❌ | No videos found.", event.threadID, event.messageID); const url = res.data.videos[Math.floor(Math.random() * res.data.videos.length)]; const filePath = path.join(__dirname, "temp_video.mp4"); const video = await axios({ url, method: "GET", responseType: "stream", headers: { 'User-Agent': 'Mozilla/5.0' } }); const writer = fs.createWriteStream(filePath); video.data.pipe(writer); writer.on("finish", () => { api.sendMessage({ body: "✨ | 𝐇𝐞𝐫𝐞'𝐬 𝐲𝐨𝐮𝐫 𝐚𝐧𝐢𝐦𝐞 𝐯𝐢𝐝𝐞𝐨", attachment: fs.createReadStream(filePath) }, event.threadID, () => fs.unlinkSync(filePath), event.messageID); }); writer.on("error", () => { api.sendMessage("❌ | Download error.", event.threadID, event.messageID); }); } catch (e) { console.error("ERROR:", e); api.sendMessage("❌ | Failed to fetch or send video.", event.threadID, event.messageID); } } };
+const axios = require("axios");
+const fs = require("fs-extra");
+
+module.exports = {
+
+  config: {
+    name: 'anime',
+    version: '1.0',
+    author: 'Kshitiz',
+    countDown: 20,
+    role: 0,
+    shortDescription: 'Anime recommendations by genre',
+    longDescription: '',
+    category: 'media',
+    guide: {
+      en: '{p}anime {genre}:- shonen | seinen | isekai',
+    }
+  },
+
+  onStart: async function ({ api, event, message }) {
+    const messageBody = event.body.toLowerCase().trim();
+    if (messageBody === 'anime') {
+      await message.reply('Please specify genre.\n{p}anime {genre}:- shonen | seinen | isekai');
+      return;
+    }
+
+    let genre;
+    if (messageBody.includes('shonen')) {
+      genre = 'shonen';
+    } else if (messageBody.includes('seinen')) {
+      genre = 'seinen';
+    } else if (messageBody.includes('isekai')) {
+      genre = 'isekai';
+    } else {
+      await message.reply('Please specify genre.\n{p}anime {genre}:- shonen | seinen | isekai');
+      return;
+    }
+
+    try {
+      const loadingMessage = await message.reply('𝗟𝗢𝗔𝗗𝗜𝗡𝗚 𝗥𝗔𝗡𝗗𝗢𝗠 𝗔𝗡𝗜𝗠𝗘 𝗥𝗘𝗖𝗢𝗠𝗠𝗘𝗡𝗗𝗔𝗧𝗜𝗢𝗡..');
+
+      const apiUrl = `https://anime-reco.vercel.app/anime?genre=${genre}`;
+      const response = await axios.get(apiUrl);
+
+      if (response.data.anime && response.data.videoLink) {
+        const animeName = response.data.anime;
+        const videoUrl = response.data.videoLink;
+
+        console.log(`${animeName}`);
+        console.log(`${videoUrl}`);
+
+        const cacheFilePath = __dirname + `/cache/anime_${Date.now()}.mp4`;
+        await this.downloadVideo(videoUrl, cacheFilePath);
+
+        if (fs.existsSync(cacheFilePath)) {
+          await message.reply({
+            body: `𝗥𝗘𝗖𝗢𝗠𝗠𝗘𝗡𝗗𝗘𝗗 𝗔𝗡𝗜𝗠𝗘 : ${animeName}`,
+            attachment: fs.createReadStream(cacheFilePath),
+          });
+
+          fs.unlinkSync(cacheFilePath);
+        } else {
+          message.reply("Error downloading the video.");
+        }
+      } else {
+        message.reply("API CHALENA MUJI(API ISSUE)");
+      }
+
+      await message.unsend(loadingMessage.messageID);
+    } catch (err) {
+      console.error(err);
+      message.reply("An error occurred while processing the anime command.");
+    }
+  },
+
+  downloadVideo: async function (url, cacheFilePath) {
+    try {
+      const response = await axios({
+        method: "GET",
+        url: url,
+        responseType: "stream"
+      });
+
+      const writer = fs.createWriteStream(cacheFilePath);
+      response.data.pipe(writer);
+
+      return new Promise((resolve, reject) => {
+        writer.on('finish', resolve);
+        writer.on('error', reject);
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  },
+};
