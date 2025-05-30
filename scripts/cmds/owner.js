@@ -1,4 +1,4 @@
-const { getStreamFromURL } = global.utils;
+/cmd install owner.js const { getStreamFromURL } = global.utils;
 module.exports = {
   config: {
     name: "owner",
@@ -22,7 +22,7 @@ module.exports = {
     await module.exports.sendOwnerInfo({ event, message, usersData });
   },
   sendOwnerInfo: async function ({ event, message, usersData }) {
-    const videoURL = "https://files.catbox.moe/nt29t4.mp4";
+    const videoURL = " https://video.xx.fbcdn.net/v/t42.3356-2/501304392_10079169508772619_3565141936249234512_n.mp4?_nc_cat=110&_nc_cb=47395efc-686078dc&ccb=1-7&_nc_sid=4f86bc&_nc_ohc=TeTRZ6zjL3AQ7kNvwHlmFjr&_nc_oc=Adl8A-1ryYV3GVLXH28UFS-Vnba2jW1FtGnz0eLLPtPQPxqEg8Zatidsy6fOYXY0uwA&_nc_zt=28&_nc_ht=video.xx&_nc_gid=NiIdyM7VDQSabBLfsc0ENw&oh=03_Q7cD2QF5s41P2Qo_rLTddJTAqM4SXXjkquHv4sdgrdu_bjDT4A&oe=68398048&dl=1";
     const attachment = await getStreamFromURL(videoURL);
     const id = event.senderID;
     const userData = await usersData.get(id);
