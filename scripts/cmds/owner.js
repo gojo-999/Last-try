@@ -1,4 +1,4 @@
-/cmd install owner.js const { getStreamFromURL } = global.utils;
+const { getStreamFromURL } = global.utils;
 module.exports = {
   config: {
     name: "owner",
