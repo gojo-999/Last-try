@@ -1,9 +1,9 @@
-/cmd install uptime3.js const os = require('os');
+const os = require('os');
 const moment = require('moment');
 
 module.exports = {
   config: {
-    name: "uptime",
+    name: "uptime3",
     version: "5.0",
     author: "Dbz_Mahin",
     role: 0,
@@ -12,7 +12,7 @@ module.exports = {
     longDescription: "Displays detailed bot uptime and system information",
     category: "utility",
     guide: {
-      en: "{prefix}uptime"
+      en: "{prefix}uptime3"
     }
   },
 
