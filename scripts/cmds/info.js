@@ -22,7 +22,7 @@ module.exports = {
       age: "15+",           // Replace with your age
       location: "Rajshahi",    // Replace with your location
       bio: "Bot & JavaScript Lover | Always Learning!", // Replace with your bio
-      botName: "💋Hakari", // Replace with bot's name
+      botName: "💋𝐘𝐮 𝐑𝐢🦋", // Replace with bot's name
       botVersion: "1.0",    // Replace with bot's version
     };
 
