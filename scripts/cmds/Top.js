@@ -1,4 +1,4 @@
-/cmd install top.js module.exports = {
+module.exports = {
   config: {
     name: "top",
     version: "2.1",
