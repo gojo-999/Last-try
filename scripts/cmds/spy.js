@@ -9,10 +9,10 @@ const baseApiUrl = async () => {
 module.exports = {
   config: {
     name: "spy",
-    aliases: ["whoishe", "whoisshe", "whoami", "atake"],
+    aliases: ["whoishe", "Damm", "whoami", "atake"],
     version: "1.0",
     role: 0,
-    author: "Dipto | styled by Amit Max ⚡",
+    author: " Mahin 😫",
     Description: "Get user information and profile photo",
     category: "information",
     countDown: 10,
@@ -63,13 +63,13 @@ module.exports = {
     let genderText;
     switch (userInfo[uid].gender) {
       case 1:
-        genderText = "𝙶𝚒𝚛𝚕🙋🏻‍♀️";
+        genderText = "𝐆𝐢𝐫𝐥🙋🏻‍♀️";
         break;
       case 2:
-        genderText = "Boy🙋🏻‍♂️";
+        genderText = "𝐁𝐨𝐲 🙋🏻‍♂️";
         break;
       default:
-        genderText = "𝙶𝚊𝚢🤷🏻‍♂️";
+        genderText = "𝐆𝐚𝐲🤷🏻‍♂️";
     }
 
     const money = (await usersData.get(uid)).money;
@@ -78,22 +78,37 @@ module.exports = {
     const position = userInfo[uid].type;
 
     const userInformation = `
-╭────[ ᴜsᴇʀ ɪɴғᴏ ]
-├‣ ✨ ɴᴀᴍᴇ: ${userInfo[uid].name.toUpperCase()}
-├‣ ${genderText === "𝙶𝚒𝚛𝚕🙋🏻‍♀️" ? "🙋🏻‍♀️" : genderText === "Boy🙋🏻‍♂️" ? "🙋🏻‍♂️" : "🤷🏻‍♂️"} ɢᴇɴᴅᴇʀ: ${genderText}
-├‣ 🆔 ᴜɪᴅ: ${uid}
-├‣ 🏷️ ᴄʟᴀss: ${position ? position.toUpperCase() : "𝙽𝚘𝚛𝚖𝚊𝚕 𝚄𝚜𝚎𝚛🥺"}
-├‣ 🔤 ᴜsᴇʀɴᴀᴍᴇ: ${userInfo[uid].vanity ? userInfo[uid].vanity.toUpperCase() : "𝙽𝚘𝚗𝚎"}
-├‣ 🔗 ᴘʀᴏғɪʟᴇ ᴜʀʟ: ${userInfo[uid].profileUrl}
-├‣ 🎂 ʙɪʀᴛʜᴅᴀʏ: ${userInfo[uid].isBirthday !== false ? userInfo[uid].isBirthday : "𝙿𝚛𝚒𝚟𝚊𝚝𝚎"}
-├‣ ✍️ ɴɪᴄᴋɴᴀᴍᴇ: ${userInfo[uid].alternateName ? userInfo[uid].alternateName.toUpperCase() : "𝙽𝚘𝚗𝚎"}
-╰‣ 🤖 ғʀɪᴇɴᴅ ᴡɪᴛʜ ʙᴏᴛ: ${userInfo[uid].isFriend ? "𝚈𝚎𝚜✅" : "𝙽𝚘❎"}
+         ┌────★────┐
+          ♡︎ 𝐔𝐬𝐞𝐫 𝐈𝐧𝐟𝐨 𝐛𝐛𝐲  ♡︎ 
+         └────★────┘
+┌──────────────────┐
+│    ✨ 𝐍𝐚𝐦𝐞: ${userInfo[uid].name.toUpperCase()} ♡︎
+│    ${genderText === "𝐆𝐢𝐫𝐥🙋🏻‍♀️" ? "🙋🏻‍♀️" : genderText === "𝐁𝐨𝐲🙋🏻‍♂️" ? "🙋🏻‍♂️" : "🤷🏻‍♂️"} 𝐆𝐞𝐧𝐝𝐞𝐫 : ${genderText}シ︎
+│    ✿︎  🆔 𝐔𝐢𝐝: ${uid} ✿︎
+│   💌 𝐂𝐥𝐚𝐬𝐬: ${position ? position.toUpperCase() : "𝐍𝐨𝐫𝐦𝐚𝐥 𝐮𝐬𝐞𝐫 🦋𝐌𝐚𝐲𝐛𝐞😒𝐈𝐝𝐤"}
+│   😍 𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞: ${userInfo[uid].vanity ? userInfo[uid].vanity.toUpperCase() : "𝐍𝐨𝐧𝐞"
+│     🦋 𝐏𝐫𝐨𝐟𝐢𝐥𝐞 𝐔𝐫𝐥: ${userInfo[uid].profileUrl}
+│     😫𝐍𝐢𝐜𝐤𝐧𝐚𝐦𝐞 : ${userInfo[uid].alternateName ? userInfo[uid].alternateName.toUpperCase() : "𝐍𝐨𝐧𝐞"}
+│     🙈 𝐅𝐫𝐢𝐞𝐧𝐝 𝐰𝐢𝐭𝐡 𝐘𝐮 𝐑𝐢: ${userInfo[uid].isFriend ? "𝐘𝐞𝐬✔️" : "𝐍𝐨❌"}
+│                   
+└──────────────────┘
+        ┌────★────┐
+             𝐉𝐚𝐧    𝐬𝐭𝐚𝐭𝐮𝐬
+        └────★────┘
+┌──────────────────┐
+│💰 𝐌𝐨𝐧𝐞𝐲 : $${formatMoney(money)}
+│
+│🏅𝐁𝐛𝐲 𝐫𝐚𝐧𝐤 : #${rank}/${allUser.length}
+│
+│🦋𝐘𝐮 𝐑𝐢 𝐌𝐨𝐧𝐞𝐲 𝐑𝐚𝐧𝐤 : #${moneyRank}/${allUser.length}
+│
+│🍷 𝐁𝐚𝐛𝐲 𝐓𝐞𝐚𝐜𝐡 : ${babyTeach || 0}`;
+│
+└──────────────────┘
+         ┌────★────┐
+          😉𝐎𝐰𝐧𝐞𝐫 𝐢𝐬 𝐬𝐢𝐧𝐠𝐥𝐞
+         └────★────┘
 
-╭─────[ ᴜsᴇʀ sᴛᴀᴛs ]
-├‣ 💰 ᴍᴏɴᴇʏ: $${formatMoney(money)}
-├‣ 🏅 ʀᴀɴᴋ: #${rank}/${allUser.length}
-├‣ 💵 ᴍᴏɴᴇʏ ʀᴀɴᴋ: #${moneyRank}/${allUser.length}
-╰‣ 👶 ʙᴀʙʏ ᴛᴇᴀᴄʜ: ${babyTeach || 0}`;
 
     message.reply({
       body: userInformation,
