@@ -5,7 +5,7 @@ const path = require("path");
 module.exports = {
   config: {
     name: "ronaldoedit",
-    aliases: [Ronaldo],
+    aliases: [],
     author: "Vex_Kshitiz",
     version: "1.0",
     cooldowns: 30,
