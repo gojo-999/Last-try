@@ -5,7 +5,7 @@ const path = require("path");
 module.exports = {
   config: {
     name: "pubgedit",
-    aliases: [Pg],
+    aliases: [],
     author: "Vex_Kshitiz",
     version: "1.0",
     cooldowns: 30,
