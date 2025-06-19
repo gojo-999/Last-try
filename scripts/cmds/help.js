@@ -33,7 +33,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += `╔══════════════╗\n  🖤COMMAND LIST 🍷\n╚══════════════╝\n`;
+      msg += `╔══════════════╗\n    🖤COMMAND LIST 🍷  \n╚══════════════╝\n`;
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -64,7 +64,7 @@ module.exports = {
       msg += `\n 	 					`;
       msg += `\n~𝙉𝘼𝙈𝙀:✰ 𝐌𝐀𝐇𝐈𝐍 ✰`;
       msg += `\n~𝙁𝘽: https://www.facebook.com/mdmahin.2026cr7wc   `;
-
+      msg += `\n~𝐖:𝐓𝐲𝐩𝐞 ${prefix}𝐀𝐝𝐝𝐨 𝐭𝐨 𝐚𝐝𝐝 𝐦𝐲 𝐨𝐰𝐧𝐞𝐫🙈 𝐓𝐲𝐩𝐞 ${prefix}𝐒𝐮𝐩𝐩𝐨𝐫𝐭𝐠𝐜 𝐭𝐨 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐦𝐚𝐢𝐧 𝐛𝐨𝐭 𝐰𝐨𝐫𝐥𝐝💋  `;
       await message.reply({
         body: msg,
       });
