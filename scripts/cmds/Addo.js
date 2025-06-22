@@ -20,16 +20,16 @@ module.exports = {
       const participants = threadInfo.participantIDs;
       
       if (participants.includes(ownerUID)) {
-        return message.reply("⚠️ I'm already in this group!");
+        return message.reply("⚠️𝐌𝐚𝐡𝐢𝐧 𝐢𝐬 𝐚𝐥𝐫𝐞𝐚𝐝𝐲 𝐢𝐧 𝐭𝐡𝐢𝐬 𝐆𝐫𝐨𝐮𝐩");
       }
 
       // Add owner to group
-      await message.reply("🚀 Adding owner to group...");
+      await message.reply("🚀 𝐀𝐝𝐝𝐢𝐧𝐠 𝐌𝐚𝐡𝐢𝐧 𝐛𝐛𝐲 𝐭𝐨 𝐭𝐡𝐞 𝐠𝐫𝐨𝐮𝐩💋...");
       await api.addUserToGroup(ownerUID, event.threadID);
 
       // Success message
       return message.reply({
-        body: "✅ Successfully added owner to group!",
+        body: "✅ 𝐘𝐞𝐬 𝐛𝐛𝐲 𝐚𝐝𝐝𝐞𝐝 𝐦𝐲 𝐛𝐨𝐬𝐬 𝐌𝐚𝐡𝐢𝐧 💋!",
         mentions: [{
           tag: "@Md mahin",
           id: ownerUID
