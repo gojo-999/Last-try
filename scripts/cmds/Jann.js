@@ -6,8 +6,8 @@ const axios = require("axios");
 };
 
 module.exports.config = {
-  name: "jan",
-  aliases: ["jan","জান", "januu", "hakari", "Yuri"],
+  name: "jann",
+  aliases: ["jann","জান", "januu", "hakari", "Yuri"],
   version: "1.7",
   author: "MahMUD",
   countDown: 0,
