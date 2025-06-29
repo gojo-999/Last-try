@@ -3,7 +3,7 @@ module.exports = {
 		name: "kick",
 		aliases:["kik"],
 		version: "1.3",
-		author: "NTKhang",
+		author: "Mahin",
 		countDown: 5,
 		role: 1,
 		description: {
@@ -22,7 +22,7 @@ module.exports = {
 			needAdmin: "Vui lòng thêm quản trị viên cho bot trước khi sử dụng tính năng này"
 		},
 		en: {
-			needAdmin: "মাদারচোদ আগে গ্রুপের এডমিন দে 😒"
+			needAdmin: "𝐹𝑜𝑟 𝑘𝑖𝑐𝑘𝑖𝑛𝑔 𝑡ℎ𝑖𝑠 𝑢𝑠𝑒𝑟 𝑖 𝑛𝑒𝑒𝑑 𝑏𝑒 𝑎𝑑𝑚𝑖𝑛 𝑏𝑏𝑦😒"
 		}
 	},
 
