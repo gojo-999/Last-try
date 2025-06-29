@@ -22,7 +22,7 @@ module.exports = {
 
     const ment = [{ id: id, tag: name }];
     
-    const a = "-`💋𝐘𝐮 𝐑𝐢🦋め";
+    const a = "-`🎀𝐌𝐚𝐡𝐢𝐫𝐮📌𝐬𝐡𝐢𝐧𝐚🦋";
     const b = "/"; // Prefix
     const c = "𝐌𝐚𝐡𝐢𝐧";
     const e = "𝐌𝐚𝐥𝐞";
