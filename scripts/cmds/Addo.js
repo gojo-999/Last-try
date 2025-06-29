@@ -24,12 +24,12 @@ module.exports = {
       }
 
       // Add owner to group
-      await message.reply("🚀 𝐀𝐝𝐝𝐢𝐧𝐠 𝐌𝐚𝐡𝐢𝐧 𝐛𝐛𝐲 𝐭𝐨 𝐭𝐡𝐞 𝐠𝐫𝐨𝐮𝐩💋...");
+      await message.reply("🚀𝐀𝐝𝐝𝐢𝐧𝐠 𝐌𝐚𝐡𝐢𝐧 𝐭𝐨 𝐭𝐡𝐞 𝐠𝐫𝐨𝐮𝐩🦋...");
       await api.addUserToGroup(ownerUID, event.threadID);
 
       // Success message
       return message.reply({
-        body: "✅ 𝐘𝐞𝐬 𝐛𝐛𝐲 𝐚𝐝𝐝𝐞𝐝 𝐦𝐲 𝐛𝐨𝐬𝐬 𝐌𝐚𝐡𝐢𝐧 💋!",
+        body: "✅ 𝐘𝐞𝐬 𝐛𝐛𝐲 𝐚𝐝𝐝𝐞𝐝 𝐦𝐲 𝐛𝐨𝐬𝐬 𝐌𝐚𝐡𝐢𝐧🎀!",
         mentions: [{
           tag: "@Md mahin",
           id: ownerUID
