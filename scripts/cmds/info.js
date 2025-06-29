@@ -22,8 +22,8 @@ module.exports = {
       age: "15+",           // Replace with your age
       location: "Rajshahi",    // Replace with your location
       bio: "Bot & JavaScript Lover | Always Learning!", // Replace with your bio
-      botName: "💋𝐘𝐮 𝐑𝐢🦋", // Replace with bot's name
-      botVersion: "1.0",    // Replace with bot's version
+      botName: "🎀𝐌𝐚𝐡𝐢𝐫𝐮📌𝑆ℎ𝑖𝑛𝑎🦋", // Replace with bot's name
+      botVersion: "9.0",    // Replace with bot's version
     };
 
     // Calculate bot uptime
