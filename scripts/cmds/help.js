@@ -34,7 +34,7 @@ module.exports = {
 
       // Create stylish response
       let replyMsg = `🌸┌─────────────────┐🌸
-      🌟│   𝐘𝐮𝐫𝐢  𝓒𝓞𝓜𝓜𝓐𝓝𝓓𝓢   │🌟
+      🌟│  𝐌𝐚𝐡𝐢𝐫𝐮🎀 𝓒𝓸𝓶𝓶𝓪𝓷𝓭𝓼   │🌟
       🌸└─────────────────┘🌸
 
       ✨ 𝓣𝓸𝓽𝓪𝓵 𝓒𝓸𝓶𝓶𝓪𝓷𝓭𝓼: ${totalCommands}
@@ -42,7 +42,7 @@ module.exports = {
   🍷 Type [ ${prefix}addo ] 𝐓𝐨 𝐚𝐝𝐝 𝐦𝐲 𝐨𝐰𝐧𝐞𝐫 📌
  🎀𝐉𝐨𝐢𝐧 𝐨𝐮𝐫 𝐌𝐚𝐢𝐧 𝐠𝐜:https://m.me/j/AbaFfM_UeoFnQqbh/
 
-      🌼══════════════════💌\n`;
+      🌼═══════════════💌\n`;
 
       // Add categories with stylish formatting
       [...categories.entries()].sort().forEach(([category, cmdList]) => {
@@ -83,7 +83,7 @@ module.exports = {
 🌌 𝓒𝓪𝓽𝓮𝓰𝓸𝓻𝔂: ${config.category || "None"}
 📜 𝓥𝓮𝓻𝓼𝓲𝓸𝓷: ${config.version}
 👤 𝓐𝓾𝓽𝓱𝓸𝓻: ${config.author || "Unknown"}
-
+ 🎀𝓓𝓮𝓼𝓬𝓻𝓲𝓹𝓽𝓲𝓸𝓷: ${longdescription}
 🪄══════════════════✨
 𝓓𝓔𝓢𝓒𝓡𝓘𝓟𝓣𝓘𝓞𝓝:
 ${config.longDescription || config.shortDescription || "No description"}
