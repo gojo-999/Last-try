@@ -34,7 +34,7 @@ module.exports = {
       }
 
       // Create stylish message header
-      let msg = `✨══════  《💰 TOP ${topCount} RICHEST 💰》 ══════✨\n\n`;
+      let msg = `✨══════  《🎀 TOP ${topCount} RICHEST 🎀》 ══════✨\n\n`;
       
       // Add each user with luxurious formatting
       sortedUsers.slice(0, topCount).forEach((user, index) => {
@@ -55,7 +55,7 @@ module.exports = {
       msg += `👑 Richest: ${sortedUsers[0].name} ($ ${formatNumberWithFullForm(sortedUsers[0].money)})\n`;
       msg += `📊 Total Participants: ${sortedUsers.length}\n`;
       msg += `💎 Total Wealth: $ ${formatNumberWithFullForm(sortedUsers.reduce((sum, user) => sum + user.money, 0))}\n`;
-      msg += `✨══════  《 Powered by Yu Ri 》 ══════✨`;
+      msg += `✨══════  《 𝓟𝓸𝔀𝓮𝓻𝓭 𝓑𝔂 🎀𝐌𝐚𝐡𝐢𝐫𝐮📌𝑆ℎ𝑖𝑛𝑎🦋 》 ══════✨`;
 
       message.reply({
         body: msg,
